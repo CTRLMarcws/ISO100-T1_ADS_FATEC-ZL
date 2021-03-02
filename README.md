@@ -1,22 +1,20 @@
-Ex. 1
-Criar em Eclipse, um novo Java Project com uma classe chamada
-RedesController.java no package controller e uma classe Main.java no
-package view.
-A classe RedesController.java deve ter 2 mÈtodos.
-O primeiro, chamado ip, que recebe o nome do Sistema Operacional como
-par‚metro e, de acordo com o S.O., faz a chamada de configuraÁ„o de IP e
-filtra a saÌda do processo, retornando um String com o nome do Adaptador
-Ethernet e o IPv4 apenas (N„o importa o n˙mero de adaptadores ethernet,
-devem aparecer todos). Os adaptadores que n„o tiverem IPv4 n„o devem
-ser mostrados.
-O segundo, chamado ping, que recebe o nome do Sistema Operacional
-como par‚metro e, de acordo com o S.O., faz a chamada de ping com 10
-iteraÁıes, filtra a saÌda, pegando apenas o tempo e d· a saÌda, em ms, do
-tempo mÈdio do ping. (O endereÁo para ping, pode ser o
-www.google.com.br)
-A Classe Main.java deve ter a possibilidade de o usu·rio escolher a aÁ„o que
-quer fazer e, dependendo da escolha, instanciar a Classe
-RedesController.java e chamar o mÈtodo escolhido. A opÁ„o de finalizar a
-aplicaÁ„o tambÈm deve estar disponÌvel.
-* Para filtrar a saÌda String, considere utilizar contains, Split, substring,
+# Sistemas Operacionais I - Prof¬∫ Leandro Colevati Dos Santos - 2021-1
+
+### ISO100-A3_ADS_FATEC-ZL
+
+Primeiro exercicio de Sistemas Operacionais I. Abaixo a descri√ß√£o do desafio proposto.
+
+#### Ex. 1
+
+Criar em Eclipse, um novo Java Project com uma classe chamada RedesController.java no package controller e uma classe Main.java no package view.
+
+A classe RedesController.java deve ter 2 m√©todos.
+
+O primeiro, chamado ip, que recebe o nome do Sistema Operacional como par√¢metro e, de acordo com o S.O., faz a chamada de configura√ß√£o de IP e filtra a sa√≠da do processo, retornando um String com o nome do Adaptador Ethernet e o IPv4 apenas (N√£o importa o n√∫mero de adaptadores ethernet, devem aparecer todos). Os adaptadores que n√£o tiverem IPv4 n√£o devem ser mostrados.
+
+O segundo, chamado ping, que recebe o nome do Sistema Operacional como par√¢metro e, de acordo com o S.O., faz a chamada de ping com 10 itera√ß√µes, filtra a sa√≠da, pegando apenas o tempo e d√° a sa√≠da, em ms, do tempo m√©dio do ping. (O endere√ßo para ping, pode ser o www.google.com.br)
+
+A Classe Main.java deve ter a possibilidade de o usu√°rio escolher a a√ß√£o que quer fazer e, dependendo da escolha, instanciar a ClasseRedesController.java e chamar o m√©todo escolhido. A op√ß√£o de finalizar a aplica√ß√£o tamb√©m deve estar dispon√≠vel.
+
+* Para filtrar a sa√≠da String, considere utilizar contains, Split, substring,
 lastIndexOf, trim;
