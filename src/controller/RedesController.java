@@ -12,28 +12,26 @@ public class RedesController {
 		super();
 	}
 
-	public String verificaOS()
+	public String verificaOs()
 	{
-		String os = System.getProperty("os.name");
+		String oS = System.getProperty("os.name");
 
-		return os;
+		return oS;
 	}
 
-	public String ip(String os)	
+	public String ip(String oS)	
 	{
 		String ipconfig = " ";
 
-		if (os.contains("Windows"))
+		if (oS.contains("Windows"))
 		{
 			try
 			{
 				Process p = Runtime.getRuntime().exec("ipconfig");
 				InputStream fluxo = p.getInputStream();
 
-
 				InputStreamReader leitor = new InputStreamReader(fluxo);
 				BufferedReader buffer = new BufferedReader(leitor);
-
 
 				String linha = buffer.readLine();
 				System.out.println(linha);
@@ -62,7 +60,7 @@ public class RedesController {
 				ipconfig = err.getMessage();
 			}
 		}
-		else if (os.contains("Linux"))
+		else if (oS.contains("Linux"))
 		{
 			try
 			{
@@ -103,7 +101,7 @@ public class RedesController {
 		}
 		else
 		{
-			ipconfig = "OS não identificado";
+			ipconfig = "Sistema Operacional não identificado";
 		}
 
 		return ipconfig;
@@ -113,6 +111,7 @@ public class RedesController {
 	{
 		double soma = 0;
 		double media = 0f;
+		int c = 0;
 
 		if (oS.contains("Windows"))
 		{
@@ -128,6 +127,8 @@ public class RedesController {
 
 				String linha = buffer.readLine();
 				System.out.println(linha);
+				
+				System.out.println("'pingando' o Google...");
 
 				while (linha != null)
 				{
@@ -137,14 +138,16 @@ public class RedesController {
 						int finalValor = linha.indexOf("ms");
 
 						soma += Double.parseDouble(linha.substring(inicioValor + 2, finalValor));
+						c ++;
 					}
 
 					linha = buffer.readLine();
 				}
 
-				media = soma / 10;
+				media = soma / c;
 
-				System.out.println(media);
+				System.out.println("O tempo médio de PING, considerando "+ c +" pacotes enviados"
+						+ " para www.google.com.br foi de: " + media + "ms");
 
 				buffer.close();
 				leitor.close();
@@ -173,6 +176,8 @@ public class RedesController {
 				String linha = buffer.readLine();
 				System.out.println(linha);
 
+				System.out.println("'pingando' o Google...");
+				
 				while (linha != null)
 				{
 					if (linha.contains("seq"))
@@ -181,12 +186,13 @@ public class RedesController {
 						int finalValor = linha.indexOf(" ms");
 
 						soma += Double.parseDouble(linha.substring(inicioValor + 2, finalValor));
+						c ++;
 					}
 
 					linha = buffer.readLine();
 				}
 
-				media = soma / 10;
+				media = soma / c;
 
 				System.out.println(media);
 
