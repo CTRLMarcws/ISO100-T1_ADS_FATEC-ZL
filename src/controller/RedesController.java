@@ -19,7 +19,7 @@ public class RedesController {
 		return os;
 	}
 
-	public void ip(String os)	
+	public String ip(String os)	
 	{
 		String ipconfig = " ";
 
@@ -106,7 +106,7 @@ public class RedesController {
 			ipconfig = "OS não identificado";
 		}
 
-		System.out.println(ipconfig);
+		return ipconfig;
 	}
 
 	public void ping(String oS)
